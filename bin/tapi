@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require 'tapi'
+
+puts "tapi v#{Tapi::VERSION}"
+puts Dir.pwd
+puts
+
+Dir.glob("lib/*"){|lib| load lib}
+
+api = Tapi::API.boot
+
+case ARGV[0]
+  when "spec" then api.generate_spec
+  when "doc" then api.generate_doc
+  else api.execute_tests
+end
