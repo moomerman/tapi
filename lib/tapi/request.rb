@@ -1,5 +1,3 @@
-require 'rest-client'
-
 class Request
   attr_reader :name, :method, :gbody, :gstatus, :gschema, :schema_name
 
@@ -52,7 +50,7 @@ class Request
 
     # check response code
     unless res.code == gstatus.code
-      err << red("    => #{res.body.strip}")
+      err << red("    => #{clean_response_body(res.body)}")
       err << red("    !! expected #{gstatus.code} got #{res.code}")
     end
 
@@ -65,7 +63,6 @@ class Request
     puts err.empty? ? green(res.code) : red(res.code)
     err.each{|e| puts e}
     warn.each{|e| puts e}
-    puts unless err.empty?
   end
 
   private
@@ -75,6 +72,12 @@ class Request
       error.gsub!(" outside of the schema when none are allowed", "")
       error.gsub!("contains additional properties", "additional")
       error
+    end
+
+    def clean_response_body(body)
+      body.strip!
+      return "<empty body>" if body == ""
+      body
     end
 
     def red(s); "\e[31m#{s}\e[0m" end

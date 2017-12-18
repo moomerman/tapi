@@ -34,7 +34,9 @@ class Schema
   end
 
   def self.validate(schema, document)
-    JSON::Validator.fully_validate(schema, document, validate_schema: true, strict: false, schema_reader: self)
+    JSON::Validator.fully_validate(schema, document,
+      validate_schema: true, strict: false, schema_reader: self
+    )
   end
 
   def self.validate_schema(name, schema)

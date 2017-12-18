@@ -1,12 +1,15 @@
+require 'json'
 require 'json-schema'
+require 'rest-client'
 
-require_relative "tapi/environment"
-require_relative "tapi/http"
-require_relative "tapi/schema"
-require_relative "tapi/api"
-require_relative "tapi/endpoint"
-require_relative "tapi/request"
-require_relative "tapi/spec/openapi"
+require "tapi/version"
+require "tapi/environment"
+require "tapi/http"
+require "tapi/schema"
+require "tapi/api"
+require "tapi/endpoint"
+require "tapi/request"
+require "tapi/spec/openapi"
 
 module Tapi
 end

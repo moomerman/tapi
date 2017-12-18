@@ -1,13 +1,14 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
+lib = File.expand_path("../../lib", __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'tapi'
 
 puts "tapi v#{Tapi::VERSION}"
 puts Dir.pwd
 puts
 
-Dir.glob("lib/*"){|lib| load lib}
+Dir.glob("lib/**/*.rb"){|lib| load lib}
 
 api = Tapi::API.boot
 
