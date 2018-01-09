@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tapi (0.1.0)
+    tipi (0.1.0)
       json-schema (~> 2.8.0)
       rest-client (~> 2.0.2)
 
@@ -36,7 +36,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.16)
   rake (~> 10.0)
-  tapi!
+  tipi!
 
 BUNDLED WITH
-   1.16.0
+   1.16.1

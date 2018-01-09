@@ -2,15 +2,15 @@
 
 lib = File.expand_path("../../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'tapi'
+require 'tipi'
 
-puts "tapi v#{Tapi::VERSION}"
+puts "tipi v#{Tipi::VERSION}"
 puts Dir.pwd
 puts
 
 Dir.glob("lib/**/*.rb"){|lib| load lib}
 
-api = Tapi::API.boot
+api = Tipi::API.boot
 
 case ARGV[0]
   when "spec" then api.generate_spec

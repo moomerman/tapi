@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "tapi/version"
+require "tipi/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "tapi"
-  spec.version       = Tapi::VERSION
+  spec.name          = "tipi"
+  spec.version       = Tipi::VERSION
   spec.authors       = ["Richard Taylor"]
   spec.email         = ["moomerman@gmail.com"]
 
   spec.summary       = "API DSL"
   spec.description   = "Generate test, docs, specs from API definition"
-  spec.homepage      = "https://github.com/moomerman/tapi"
+  spec.homepage      = "https://github.com/moomerman/tipi"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

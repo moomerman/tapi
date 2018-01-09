@@ -1,4 +1,4 @@
-module Tapi
+module Tipi
   class API
     attr_reader :env, :version, :title, :description, :endpoints
 
